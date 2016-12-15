@@ -2,3 +2,5 @@ name: pip-env
 dependencies:
   - python=3
   - pip
+  - pip:
+      - tweepy==3.5.0
