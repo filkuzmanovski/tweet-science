@@ -1,0 +1,4 @@
+name: pip-env
+dependencies:
+  - python=3
+  - pip
