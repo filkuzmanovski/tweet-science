@@ -30,9 +30,8 @@ Tweet science is a simple application allowing you to mine data from Twitter.
   $ echo 'source ~/.autoenv/activate.sh' >> ~/.bashrc
   ```
 
-  Head over to the autoenv repository for further configuration instructions
+  Head over to the [autoenv](https://github.com/kennethreitz/autoenv) repository for further configuration instructions
 
-  [Autoenv Github Repo]: https://github.com/kennethreitz/autoenv	"autoenv"
 
   ### Safely storing API Credentials
 
@@ -49,5 +48,5 @@ Tweet science is a simple application allowing you to mine data from Twitter.
   ```
 
 
-### Version
-1.0
+  ### Version
+  1.0
