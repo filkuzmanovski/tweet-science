@@ -9,6 +9,12 @@ Tweet science is a simple application allowing you to mine data from Twitter.
 
   ## Environment
 
+  ### Conda
+
+  Conda alongside autoenv is a suitable workflow to manage a python project for a particular version of python with all modules, rather than installing everything globally. Its an efficient and easy alternative to using virtualenv and so far conda environments are yet to fail me.
+  Head over to [conda](http://conda.pydata.org/docs/install/quick.html) docs to install and configure your conda environment.
+
+
   ### Autoenv
 
   I use **autoenv** to automatically activate the conda environment.
