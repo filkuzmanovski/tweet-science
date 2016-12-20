@@ -53,5 +53,5 @@ class CustomListener(StreamListener):
         query = sys.argv[1:] # list of CLI arguments
         query_fname = ' '.join(query) # string
         auth = get_twitter_auth()
-        twitter_stream = Stream(auth, CustomListener(query_fname))
+        twitter_stream = Stream(auth, CustomListener(query_fname)) # Unknown Error
         twitter_stream.filter(track=query, async=True)
