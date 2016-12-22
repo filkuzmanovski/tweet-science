@@ -24,34 +24,32 @@ class CustomListener(StreamListener):
 
     def on_error(self, status):
         if status == 420:
-            sys.stderr.write("Rate limit exceeeded\n".format(status))
+            sys.stderr.write("Rate limit exceeded\n".format(status))
             return False
         else:
             sys.stderr.write("Error {}\n".format(status))
             return True
 
-    def format_filename(fname):
-        """Convert fname into safe string for file name.
+def format_filename(fname):
+    """Convert fname into a safe string for a file name.
+    Return: string
+    """
+    return ''.join(convert_valid(one_char) for one_char in fname)
 
-        Return: string
-        """
-        return ''.join(convert_valid(one_char) for one_char in fname)
 
+def convert_valid(one_char):
+    """Convert a character into '_' if "invalid".
+    Return: string
+    """
+    valid_chars = "-_.%s%s" % (string.ascii_letters, string.digits)
+    if one_char in valid_chars:
+        return one_char
+    else:
+        return '_'
 
-    def convert_valid(one_char):
-        """Convert a character into '_' if "invalid"/
-
-        Return: string
-        """
-        valid_chars = "-_.%s%s" % (string.ascii_letters, string.digits)
-        if one_char in valid_chars:
-            return one_char
-        else:
-            return '_'
-
-    if __name__ == '__main__':
-        query = sys.argv[1:] # list of CLI arguments
-        query_fname = ' '.join(query) # string
-        auth = get_twitter_auth()
-        twitter_stream = Stream(auth, CustomListener(query_fname)) # Unknown Error
-        twitter_stream.filter(track=query, async=True)
+if __name__ == '__main__':
+    query = sys.argv[1:] # list of CLI arguments
+    query_fname = ' '.join(query) # string
+    auth = get_twitter_auth()
+    twitter_stream = Stream(auth, CustomListener(query_fname))
+    twitter_stream.filter(track=query, async=True)
