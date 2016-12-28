@@ -54,5 +54,18 @@ Tweet science is a simple application allowing you to mine data from Twitter.
   ```
 
 
+  ### Using Matplotlib with OS X
+  Image rendering in mac os can sometimes throw an erro when using matplotlib.
+  When faced with a Runtime Error: Python is not installed as a framework, go ahead and head to your terminal to
+  ```
+  ~/.matplotlib
+  ```
+  ```
+  nano matplotlibrc
+  ```
+  enter ``` backend: TkAgg```
+  Control X to Save your modified changes and exit
+  You can also use Vim or any other text editor, I use nano for convenience here
+  
   ### Version
   1.0
